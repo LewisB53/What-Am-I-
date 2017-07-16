@@ -6582,17 +6582,23 @@ class GridOption extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
     super(props);
     this.state = {};
     this.imageClicked = this.imageClicked.bind(this);
+
+    console.log(this.props.win);
   }
 
   imageClicked() {
-    console.log(this.props.obj);
+
+    if (this.props.obj == this.props.win) {
+      console.log("you win");
+    }
+    console.log(this.props.obj.id);
   }
 
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'item', onClick: this.imageClicked },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'image', src: this.props.obj.image, alt: 'item' })
+      "div",
+      { className: "item", onClick: this.imageClicked },
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "image", src: this.props.obj.image, alt: "item" })
     );
   }
 }
@@ -9800,7 +9806,17 @@ module.exports = getIteratorFn;
 
 const options = [{ id: 1, name: 'Bus', size: 10, colour: 'Yellow', image: 'images/bus.png' }, { id: 2, name: 'phone', size: 3, colour: 'Yellow', image: 'images/phone.png' }, { id: 3, name: 'car', size: 6, colour: 'Red', image: 'images/car.png' }, { id: 4, name: 'apple', size: 2, colour: 'Red', image: 'images/apple.png' }, { id: 5, name: 'cat', size: 5, colour: 'Grey', image: 'images/cat.jpg' }, { id: 6, name: 'elephant', size: 8, colour: 'Grey', image: 'images/elephant.png' }, { id: 7, name: 'mouse', size: 1, colour: 'Grey', image: 'images/mouse.png' }, { id: 8, name: 'toadstool', size: 2, colour: 'Red', image: 'images/toadstool.jpg' }, { id: 9, name: 'balloon', size: 4, colour: 'Yellow', image: 'images/balloon.jpg' }];
 
+const winningSeletion = options[Math.floor(Math.random() * options.length)];
 class GameContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: options,
+      win: winningSeletion
+    };
+    console.log(this.state.win);
+  }
 
   render() {
 
@@ -9812,15 +9828,15 @@ class GameContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
         { id: 'heading' },
         ' What am I? '
       ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[0] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[1] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[2] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[3] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[4] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[5] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[6] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[7] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { obj: options[8] })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[0] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[1] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[2] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[3] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[4] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[5] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[6] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[7] }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[8] })
     );
   }
 

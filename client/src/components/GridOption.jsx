@@ -5,13 +5,20 @@ class GridOption extends React.Component{
   constructor(props){
     super(props)
     this.state = {
+
     }
     this.imageClicked = this.imageClicked.bind(this)
+  
+      console.log(this.props.win)
+
   }
 
   imageClicked(){
-    console.log (this.props.obj)
   
+    if (this.props.obj == this.props.win) 
+      {console.log("you win")}
+      console.log(this.props.obj.id)
+
   }
 
 

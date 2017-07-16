@@ -14,24 +14,33 @@ const options = [
   {id: 9, name: 'balloon', size:4, colour: 'Yellow', image: 'images/balloon.jpg'}
 ]
   
+const winningSeletion = options[Math.floor(Math.random() * options.length)];
 class GameContainer extends React.Component{
 
+  constructor(props){
+    super(props)
+    this.state = {
+      options:options,
+      win: winningSeletion
+    }
+    console.log(this.state.win)
 
+  }
 
 render(){
 
 return (
   <div id = "grid-wrapper"> 
   <h3 id = "heading"> What am I? </h3>
-  <GridOption obj={options[0]}/>
-  <GridOption obj={options[1]}/>
-  <GridOption obj={options[2]}/>
-  <GridOption obj={options[3]}/>
-  <GridOption obj={options[4]}/>
-  <GridOption obj={options[5]}/>
-  <GridOption obj={options[6]}/>
-  <GridOption obj={options[7]}/>
-  <GridOption obj={options[8]}/>
+  <GridOption win={this.state.win} obj={options[0]}/>
+  <GridOption win={this.state.win} obj={options[1]}/>
+  <GridOption win={this.state.win} obj={options[2]}/>
+  <GridOption win={this.state.win} obj={options[3]}/>
+  <GridOption win={this.state.win} obj={options[4]}/>
+  <GridOption win={this.state.win} obj={options[5]}/>
+  <GridOption win={this.state.win} obj={options[6]}/>
+  <GridOption win={this.state.win} obj={options[7]}/>
+  <GridOption win={this.state.win} obj={options[8]}/>
   </div>
 )
 }
