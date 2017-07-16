@@ -6,23 +6,22 @@
   height: 100px;
 }
 
-
-}
-
 .heading{
     color: blue;
     text-align: center;
+    align-self: center;
 }
 
 .clue{
+    padding: 20px;
     color: blue;
     float: center;
 }
 
-.item{
-  width:500px
-}
 
+.item{
+  width:800px
+}
 
 
 body{
@@ -31,9 +30,19 @@ body{
 
 
 .image{
-  width: 100px;
-  height:100px;
+  width: 135px;
+  height:135px;
   float: left;
-  padding: 7px;
+  padding: 15px;
+}
+
+.win{
+  width:500px
+}
+
+p{
+  font-size: 32px;
+  margin: 100px
+  text-align: left;
 
 }

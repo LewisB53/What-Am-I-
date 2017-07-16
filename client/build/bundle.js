@@ -6589,13 +6589,12 @@ class GridOption extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
 
   imageClicked() {
     counter++;
-
     let counterDisplay = document.getElementById("counter");
-    const winScreen = document.getElementById("gameBoard");
+    const winScreen = document.getElementById("win");
     const clue = document.getElementById("clue");
 
     if (this.props.obj.id == this.props.win.id) {
-      winScreen.innerText = "you win";
+      winScreen.innerText = "YOU FOUND ME!!!";
     }
 
     if (this.props.obj.size > this.props.win.size) {
@@ -6603,6 +6602,9 @@ class GridOption extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
     }
     if (this.props.obj.size < this.props.win.size) {
       clue.innerText = "I am bigger than that";
+    }
+    if (this.props.obj.name != this.props.win.name && this.props.obj.size == this.props.win.size) {
+      clue.innerText = "I am about the same size as that";
     }
 
     if (this.props.obj.colour != this.props.win.colour) {
@@ -6623,6 +6625,7 @@ class GridOption extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { className: "image", src: this.props.obj.image, alt: "item" })
     );
   }
+
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (GridOption);
@@ -9839,11 +9842,9 @@ class GameContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
       options: options,
       win: winningSeletion
     };
-    console.log(this.state.win);
   }
 
   render() {
-
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'gameBoard' },
@@ -9872,18 +9873,23 @@ class GameContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[14] }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: hintBox }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h3',
+          'p',
           null,
           ' Take a guess! '
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h3',
+          'p',
           { id: 'clue' },
           ' '
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h3',
+          'p',
           { id: 'counter' },
+          ' '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          { id: 'win' },
           ' '
         )
       )

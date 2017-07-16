@@ -19,10 +19,10 @@ const options = [
   {id:14, name:'toadstool', size:2, colour:'red', image:'images/toadstool.jpg'},
   {id:15, name:'balloon', size:4, colour:'yellow', image:'images/balloon.jpg'},
 ]
-  
+
+
 const winningSeletion = options[Math.floor(Math.random() * options.length)];
 const hintBox = {id:16, name:"hintBox", image:'images/help.png'}
-
 
 
 class GameContainer extends React.Component{
@@ -33,53 +33,40 @@ class GameContainer extends React.Component{
       options:options,
       win: winningSeletion
     }
-    console.log(this.state.win)
-
   }
 
-render(){
 
-return (
-  <div id= "gameBoard">
-    <div id = "grid-wrapper"> 
-      <h3 id = "heading"> What am I? </h3>
-      <GridOption win={this.state.win} obj={options[0]}/>
-      <GridOption win={this.state.win} obj={options[1]}/>
-      <GridOption win={this.state.win} obj={options[2]}/>
-      <GridOption win={this.state.win} obj={options[3]}/>
-      <GridOption win={this.state.win} obj={options[4]}/>
-      <GridOption win={this.state.win} obj={options[5]}/>
-      <GridOption win={this.state.win} obj={options[6]}/>
-      <GridOption win={this.state.win} obj={options[7]}/>
-      <GridOption win={this.state.win} obj={options[8]}/>
-      <GridOption win={this.state.win} obj={options[9]}/>
-      <GridOption win={this.state.win} obj={options[10]}/>
-      <GridOption win={this.state.win} obj={options[11]}/>
-      <GridOption win={this.state.win} obj={options[12]}/>
-      <GridOption win={this.state.win} obj={options[13]}/>
-      <GridOption win={this.state.win} obj={options[14]}/>
-      <GridOption win={this.state.win} obj={hintBox}/>
+  render(){
+    return (
+      <div id= "gameBoard">
+        <div id = "grid-wrapper"> 
+          <h3 id = "heading"> What am I? </h3>
 
-      
+          <GridOption win={this.state.win} obj={options[0]}/>
+          <GridOption win={this.state.win} obj={options[1]}/>
+          <GridOption win={this.state.win} obj={options[2]}/>
+          <GridOption win={this.state.win} obj={options[3]}/>
+          <GridOption win={this.state.win} obj={options[4]}/>
+          <GridOption win={this.state.win} obj={options[5]}/>
+          <GridOption win={this.state.win} obj={options[6]}/>
+          <GridOption win={this.state.win} obj={options[7]}/>
+          <GridOption win={this.state.win} obj={options[8]}/>
+          <GridOption win={this.state.win} obj={options[9]}/>
+          <GridOption win={this.state.win} obj={options[10]}/>
+          <GridOption win={this.state.win} obj={options[11]}/>
+          <GridOption win={this.state.win} obj={options[12]}/>
+          <GridOption win={this.state.win} obj={options[13]}/>
+          <GridOption win={this.state.win} obj={options[14]}/>
+          <GridOption win={this.state.win} obj={hintBox}/>
 
-
-
-    
-
-
-  
-
-
-      <h3> Take a guess! </h3>
-      <h3 id = "clue"> </h3>
-      <h3 id = "counter"> </h3>
-
-    </div>
-
-  </div>
-
-)
-}
+          <p> Take a guess! </p>
+          <p id = "clue"> </p>
+          <p id = "counter"> </p>
+          <p id = "win" > </p>
+        </div>
+      </div>
+    )
+  }
 
 
 };
