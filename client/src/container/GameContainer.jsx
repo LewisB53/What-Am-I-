@@ -3,18 +3,28 @@ import GridOption from '../components/GridOption.jsx'
 
 
 const options = [
-  {id: 1, name: 'Bus', size:10, colour: 'Yellow', image: 'images/bus.png'},
-  {id: 2, name: 'phone', size:3, colour: 'Yellow', image: 'images/phone.png'},
-  {id: 3, name: 'car', size:6, colour: 'Red', image: 'images/car.png'},
-  {id: 4, name: 'apple', size:2, colour: 'Red', image: 'images/apple.png'},
-  {id: 5, name: 'cat', size:5, colour: 'Grey', image: 'images/cat.jpg'},
-  {id: 6, name: 'elephant', size:8, colour: 'Grey', image: 'images/elephant.png'},
-  {id: 7, name: 'mouse', size:1, colour: 'Grey', image: 'images/mouse.png'},
-  {id: 8, name: 'toadstool', size:2, colour: 'Red', image: 'images/toadstool.jpg'},
-  {id: 9, name: 'balloon', size:4, colour: 'Yellow', image: 'images/balloon.jpg'}
+  {id:1, name:'phone', size:3, colour:'yellow', image:'images/phone.png'},
+  {id:2, name:'mouse', size:1, colour:'grey', image:'images/mouse.png'},
+  {id:3, name:'apple', size:2, colour:'red', image:'images/apple.png'},
+  {id:4, name:'frog', size:2, colour:'green', image:'images/frog.png'},
+  {id:5, name:'cat', size:5, colour:'grey', image:'images/cat.jpg'},
+  {id:6, name:'pot', size:4, colour:'blue', image:'images/pot.png'},
+  {id:7, name:'elephant', size:8, colour:'grey', image:'images/elephant.png'},
+  {id:8, name:'glider', size:13, colour:'green', image:'images/glider.png'},
+  {id:9, name:'bike', size:7, colour:'blue', image:'images/bike.png'},
+  {id:10, name:'tree', size:8, colour:'green', image:'images/tree.png'},
+  {id:11, name:'car', size:6, colour:'red', image:'images/car.png'},
+  {id:12, name:'Bus', size:10, colour:'yellow', image:'images/bus.png'},
+  {id:13, name:'guitar', size:6, colour:'blue', image:'images/guitar.png'},
+  {id:14, name:'toadstool', size:2, colour:'red', image:'images/toadstool.jpg'},
+  {id:15, name:'balloon', size:4, colour:'yellow', image:'images/balloon.jpg'},
 ]
   
 const winningSeletion = options[Math.floor(Math.random() * options.length)];
+const hintBox = {id:16, name:"hintBox", image:'images/help.png'}
+
+
+
 class GameContainer extends React.Component{
 
   constructor(props){
@@ -42,6 +52,24 @@ return (
       <GridOption win={this.state.win} obj={options[6]}/>
       <GridOption win={this.state.win} obj={options[7]}/>
       <GridOption win={this.state.win} obj={options[8]}/>
+      <GridOption win={this.state.win} obj={options[9]}/>
+      <GridOption win={this.state.win} obj={options[10]}/>
+      <GridOption win={this.state.win} obj={options[11]}/>
+      <GridOption win={this.state.win} obj={options[12]}/>
+      <GridOption win={this.state.win} obj={options[13]}/>
+      <GridOption win={this.state.win} obj={options[14]}/>
+      <GridOption win={this.state.win} obj={hintBox}/>
+
+      
+
+
+
+    
+
+
+  
+
+
       <h3> Take a guess! </h3>
       <h3 id = "clue"> </h3>
       <h3 id = "counter"> </h3>

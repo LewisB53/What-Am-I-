@@ -26,14 +26,16 @@ class GridOption extends React.Component{
       {winScreen.innerText ="you win" }
 
     if (this.props.obj.size > this.props.win.size) 
-      {clue.innerText ="I am smaller"}
+      {clue.innerText ="I am smaller than that."}
     if (this.props.obj.size < this.props.win.size) 
-      {clue.innerText ="I am Bigger"}
+      {clue.innerText ="I am bigger than that"}
   
     
     if (this.props.obj.colour != this.props.win.colour ) 
-      {clue.innerText ="I am a different Colour"}
+      {clue.innerText ="I am a different colour"}
 
+    if (this.props.obj.id == 16) 
+      {clue.innerText ="I am " + this.props.win.colour }
   
     counterDisplay.innerText = " Number of guesses: " + counter
   }
