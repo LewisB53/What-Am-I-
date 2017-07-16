@@ -30,18 +30,26 @@ class GameContainer extends React.Component{
 render(){
 
 return (
-  <div id = "grid-wrapper"> 
-  <h3 id = "heading"> What am I? </h3>
-  <GridOption win={this.state.win} obj={options[0]}/>
-  <GridOption win={this.state.win} obj={options[1]}/>
-  <GridOption win={this.state.win} obj={options[2]}/>
-  <GridOption win={this.state.win} obj={options[3]}/>
-  <GridOption win={this.state.win} obj={options[4]}/>
-  <GridOption win={this.state.win} obj={options[5]}/>
-  <GridOption win={this.state.win} obj={options[6]}/>
-  <GridOption win={this.state.win} obj={options[7]}/>
-  <GridOption win={this.state.win} obj={options[8]}/>
+  <div id= "gameBoard">
+    <div id = "grid-wrapper"> 
+      <h3 id = "heading"> What am I? </h3>
+      <GridOption win={this.state.win} obj={options[0]}/>
+      <GridOption win={this.state.win} obj={options[1]}/>
+      <GridOption win={this.state.win} obj={options[2]}/>
+      <GridOption win={this.state.win} obj={options[3]}/>
+      <GridOption win={this.state.win} obj={options[4]}/>
+      <GridOption win={this.state.win} obj={options[5]}/>
+      <GridOption win={this.state.win} obj={options[6]}/>
+      <GridOption win={this.state.win} obj={options[7]}/>
+      <GridOption win={this.state.win} obj={options[8]}/>
+      <h3> Take a guess! </h3>
+      <h3 id = "clue"> </h3>
+      <h3 id = "counter"> </h3>
+
+    </div>
+
   </div>
+
 )
 }
 

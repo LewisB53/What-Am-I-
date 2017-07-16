@@ -6576,22 +6576,40 @@ module.exports = lowPriorityWarning;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
+const gameBoard = document.getElementById("gameBoard");
+let counter = 0;
+
 class GridOption extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
   constructor(props) {
     super(props);
     this.state = {};
     this.imageClicked = this.imageClicked.bind(this);
-
-    console.log(this.props.win);
   }
 
   imageClicked() {
+    counter++;
 
-    if (this.props.obj == this.props.win) {
-      console.log("you win");
+    let counterDisplay = document.getElementById("counter");
+    const winScreen = document.getElementById("gameBoard");
+    const clue = document.getElementById("clue");
+
+    if (this.props.obj.id == this.props.win.id) {
+      winScreen.innerText = "you win";
     }
-    console.log(this.props.obj.id);
+
+    if (this.props.obj.size > this.props.win.size) {
+      clue.innerText = "I am smaller";
+    }
+    if (this.props.obj.size < this.props.win.size) {
+      clue.innerText = "I am Bigger";
+    }
+
+    if (this.props.obj.colour != this.props.win.colour) {
+      clue.innerText = "I am a different Colour";
+    }
+
+    counterDisplay.innerText = " Number of guesses: " + counter;
   }
 
   render() {
@@ -9822,21 +9840,40 @@ class GameContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compon
 
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { id: 'grid-wrapper' },
+      { id: 'gameBoard' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'h3',
-        { id: 'heading' },
-        ' What am I? '
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[0] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[1] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[2] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[3] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[4] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[5] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[6] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[7] }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[8] })
+        'div',
+        { id: 'grid-wrapper' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { id: 'heading' },
+          ' What am I? '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[0] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[1] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[2] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[3] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[4] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[5] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[6] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[7] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_GridOption_jsx__["a" /* default */], { win: this.state.win, obj: options[8] }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          null,
+          ' Take a guess! '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { id: 'clue' },
+          ' '
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { id: 'counter' },
+          ' '
+        )
+      )
     );
   }
 

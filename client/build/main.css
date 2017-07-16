@@ -14,6 +14,11 @@
     text-align: center;
 }
 
+.clue{
+    color: blue;
+    float: center;
+}
+
 .item{
   width:350px
 }
